@@ -68,8 +68,8 @@
       "category": "public.app-category.developer-tools",
       "target": [
         {
-          "target": "dir",
-          "arch": ["universal"]
+          "target": "dmg",
+          "arch": ["arm64", "x64"]
         }
       ]
     },

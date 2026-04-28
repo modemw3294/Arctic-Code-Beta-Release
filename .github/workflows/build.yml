@@ -71,8 +71,8 @@ jobs:
         if: matrix.os == 'macos-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: Arctic-Code-macOS-Universal
-          path: release/mac-universal/Arctic Code.app
+          name: Arctic-Code-macOS
+          path: release/*.dmg
           retention-days: 30
 
       - name: Upload artifacts (Linux)
@@ -101,7 +101,7 @@ jobs:
         with:
           files: |
             artifacts/Arctic-Code-Windows-x64/*
-            artifacts/Arctic-Code-macOS-Universal/*
+            artifacts/Arctic-Code-macOS/*
             artifacts/Arctic-Code-Linux-x64/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
