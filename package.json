@@ -14,11 +14,11 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dist": "vite build && electron-builder",
-    "dist:mac": "vite build && electron-builder --mac",
-    "dist:linux": "vite build && electron-builder --linux",
-    "dist:win": "vite build && electron-builder --win",
-    "dist:all": "vite build && electron-builder -mwl"
+    "dist": "vite build && electron-builder --publish never",
+    "dist:mac": "vite build && electron-builder --mac --publish never",
+    "dist:linux": "vite build && electron-builder --linux --publish never",
+    "dist:win": "vite build && electron-builder --win --publish never",
+    "dist:all": "vite build && electron-builder -mwl --publish never"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
