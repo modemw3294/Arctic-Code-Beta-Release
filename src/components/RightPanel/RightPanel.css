@@ -1,0 +1,388 @@
+/* ================================================
+   Right Panel
+   ================================================ */
+
+.right-panel {
+    width: var(--right-panel-width);
+    /* 关键：用 100% 但同时允许 min-height: 0，
+       避免在 flex 父容器中被内容撑高导致 overflow 失效。 */
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+    border-left: 1px solid var(--border-secondary);
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-shrink: 0;
+    animation: slideInRight 0.2s ease forwards;
+}
+
+/* Sections — flex-shrink: 0 让每段保持自身内容高度，
+   不会被 flex 容器压缩；超出总高时由 .right-panel 自身滚动条承担。 */
+.rp-section {
+    border-bottom: 1px solid var(--border-secondary);
+    flex: 0 0 auto;
+}
+
+.rp-section:last-child {
+    border-bottom: none;
+}
+
+.rp-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-4) var(--space-2);
+}
+
+.rp-section-title {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Empty State */
+.rp-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-6) var(--space-4);
+    gap: var(--space-2);
+}
+
+.rp-empty-icon {
+    opacity: 0.5;
+    margin-bottom: var(--space-1);
+}
+
+.rp-empty-text {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-tertiary);
+}
+
+.rp-empty-hint {
+    font-size: var(--font-size-xs);
+    color: var(--text-quaternary);
+    text-align: center;
+    line-height: 1.5;
+    max-width: 200px;
+}
+
+/* Section Content */
+.rp-section-content {
+    padding: 0 var(--space-4) var(--space-4);
+}
+
+/* Task Progress (rendered below the todo list) — kept intentionally compact
+   so it doesn't compete visually with the todo list itself. */
+.rp-progress {
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rp-progress-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+.rp-progress-label {
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.rp-progress-percent {
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+.rp-progress-bar {
+    height: 3px;
+    border-radius: 999px;
+    background: var(--surface-2, var(--bg-tertiary, rgba(255,255,255,0.06)));
+    overflow: hidden;
+    position: relative;
+}
+
+.rp-progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--arctic-blue), var(--status-success, #4ade80));
+    border-radius: 999px;
+    transition: width 280ms ease-out;
+}
+
+.rp-progress-bar-fill.is-done {
+    background: var(--status-success, #4ade80);
+}
+
+.rp-progress-eta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    line-height: 1.2;
+    color: var(--text-tertiary);
+}
+
+.rp-progress-eta-value {
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Todo List */
+.rp-todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.rp-todo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* TODO status icon — 14px SVG with colour keyed to the item's state. The
+   pending/in_progress/completed classes target the wrapper <span> so any
+   child SVG inherits the colour via `stroke: currentColor`. */
+.rp-todo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    color: var(--text-quaternary);
+    transition: color var(--transition-normal);
+}
+
+.rp-todo-icon.pending {
+    color: var(--text-quaternary);
+}
+
+/* Legacy 'active' alias (Phase 0 task data) + canonical 'in_progress'. */
+.rp-todo-icon.active,
+.rp-todo-icon.in_progress {
+    color: var(--arctic-blue);
+}
+
+.rp-todo-icon.completed,
+.rp-todo-icon.done {
+    color: var(--status-success);
+}
+
+/* Skipped: neutral warning amber, indicating the item was intentionally
+   passed over (not a failure). */
+.rp-todo-icon.skipped {
+    color: var(--status-warning, #F59E0B);
+}
+
+/* Failed: error red. Matches the app's existing error status semantics. */
+.rp-todo-icon.failed {
+    color: var(--status-error);
+}
+
+.rp-todo-text {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.rp-todo-item.done .rp-todo-text,
+.rp-todo-item.completed .rp-todo-text,
+.rp-todo-item.skipped .rp-todo-text {
+    color: var(--text-tertiary);
+    text-decoration: line-through;
+    text-decoration-color: var(--text-quaternary);
+}
+
+.rp-todo-item.failed .rp-todo-text {
+    color: var(--text-tertiary);
+}
+
+/* Artifact List */
+.rp-artifact-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.rp-artifact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: left;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.rp-artifact-item:hover {
+    background: var(--bg-hover);
+}
+
+.rp-artifact-item:focus-visible {
+    outline: 2px solid var(--arctic-blue);
+    outline-offset: -2px;
+}
+
+.rp-artifact-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.rp-artifact-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.rp-artifact-name {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rp-artifact-type {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+/* Reference List */
+.rp-reference-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.rp-reference-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 6px var(--space-2);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.rp-reference-item:hover {
+    background: var(--bg-hover);
+}
+
+.rp-reference-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.rp-reference-title {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Context (Code Mode) */
+.rp-context {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.rp-context-compression {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.rp-context-bar {
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    display: flex;
+}
+
+.rp-context-bar-seg {
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+.rp-context-bar-seg.seg-skills {
+    background: var(--arctic-blue);
+}
+
+.rp-context-bar-seg.seg-files {
+    background: var(--status-success);
+}
+
+.rp-context-bar-seg.seg-history {
+    background: var(--text-quaternary);
+}
+
+.rp-context-total {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    font-variant-numeric: tabular-nums;
+}
+
+.rp-context-stats {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rp-context-percent {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.rp-context-legend {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.rp-legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.rp-legend-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+}

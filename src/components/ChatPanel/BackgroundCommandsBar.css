@@ -1,0 +1,143 @@
+/* ================================================
+   Background Commands Bar
+   ================================================ */
+
+.bg-cmd-bar {
+    margin: 0 0 var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    animation: bgCmdSlideIn 0.18s ease forwards;
+}
+
+@keyframes bgCmdSlideIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.bg-cmd-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0 var(--space-1);
+}
+
+.bg-cmd-title {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+.bg-cmd-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.bg-cmd-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 6px 5px 10px;
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    transition: border-color var(--transition-fast);
+}
+
+.bg-cmd-chip:hover {
+    border-color: var(--border-primary);
+}
+
+/* Status pulse — green pulsating circle while running, dim gray once exited */
+.bg-cmd-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--text-quaternary);
+}
+
+.bg-cmd-chip.is-running .bg-cmd-status-dot {
+    background: var(--status-success, #22c55e);
+    animation: bgCmdPulse 1.6s ease-in-out infinite;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+}
+
+@keyframes bgCmdPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
+    70%  { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.bg-cmd-icon {
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+    display: inline-flex;
+}
+
+.bg-cmd-cmd {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: var(--font-size-xs);
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bg-cmd-pending {
+    flex-shrink: 0;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--arctic-blue, #3b82f6);
+    font-size: 10px;
+    font-weight: 600;
+    font-family: var(--font-mono, ui-monospace, monospace);
+}
+
+.bg-cmd-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-tertiary);
+    font-size: 11px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.bg-cmd-stop:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--status-error, #ef4444);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.bg-cmd-dismiss {
+    padding: 3px 6px;
+}
+
+.bg-cmd-dismiss:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* Exited entries fade slightly so the user's eye lands on running ones first. */
+.bg-cmd-chip.is-exited {
+    opacity: 0.72;
+}
+.bg-cmd-chip.is-exited .bg-cmd-cmd {
+    color: var(--text-secondary);
+}

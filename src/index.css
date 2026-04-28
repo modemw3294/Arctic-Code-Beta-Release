@@ -1,0 +1,1786 @@
+/* ================================================
+   Arctic Code Beta 2 — Design System
+   Orange Studio · Apple-Inspired Blue/White Theme
+   ================================================ */
+
+:root {
+  /* Brand Colors */
+  --arctic-blue: #0071E3;
+  --arctic-blue-hover: #0077ED;
+  --arctic-blue-light: #E8F2FF;
+  --arctic-blue-subtle: #F0F6FF;
+  --arctic-blue-glow: rgba(0, 113, 227, 0.12);
+
+  /* Neutrals */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F7;
+  --bg-tertiary: #FAFAFA;
+  --bg-sidebar: #F8F8FA;
+  --bg-hover: #F0F0F2;
+  --bg-active: #E8E8EC;
+
+  /* Text */
+  --text-primary: #1D1D1F;
+  --text-secondary: #6E6E73;
+  --text-tertiary: #86868B;
+  --text-quaternary: #AEAEB2;
+  --text-on-blue: #FFFFFF;
+
+  /* Borders */
+  --border-primary: #E5E5EA;
+  --border-secondary: #F0F0F2;
+  --border-focus: var(--arctic-blue);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.10);
+  --shadow-blue: 0 4px 12px rgba(0, 113, 227, 0.2);
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-md: 15px;
+  --font-size-lg: 17px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+
+  /* Transition */
+  --transition-fast: 120ms ease;
+  --transition-normal: 200ms ease;
+  --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --right-panel-width: 280px;
+  --titlebar-height: 52px;
+  --input-bar-height: 120px;
+
+  /* Status colors */
+  --status-success: #30D158;
+  --status-warning: #FF9F0A;
+  --status-error: #FF453A;
+  --status-info: var(--arctic-blue);
+}
+
+:root[data-theme='dark'] {
+  --bg-primary: #1C1C1E;
+  --bg-secondary: #2C2C2E;
+  --bg-tertiary: #3A3A3C;
+  --bg-sidebar: #1E1E20;
+  --bg-hover: #48484A;
+  --bg-active: #636366;
+
+  --text-primary: #F5F5F7;
+  --text-secondary: rgba(235, 235, 245, 0.6);
+  --text-tertiary: rgba(235, 235, 245, 0.38);
+  --text-quaternary: rgba(235, 235, 245, 0.18);
+  --text-on-blue: #FFFFFF;
+
+  --border-primary: #38383A;
+  --border-secondary: #48484A;
+  --border-focus: var(--arctic-blue);
+
+  --arctic-blue: #0A84FF;
+  --arctic-blue-hover: #007EE5;
+  --arctic-blue-light: rgba(10, 132, 255, 0.15);
+  --arctic-blue-subtle: rgba(10, 132, 255, 0.1);
+  --arctic-blue-glow: rgba(10, 132, 255, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-blue: 0 4px 12px rgba(10, 132, 255, 0.3);
+}
+
+/* ================================================
+   Modern Theme — White + Blue, Mica + Rounded
+   ================================================ */
+
+:root[data-theme='modern'] {
+  /* Brand blue — vivid, slightly saturated */
+  --arctic-blue: #0071E3;
+  --arctic-blue-hover: #0068D0;
+  --arctic-blue-light: #E0EDFF;
+  --arctic-blue-subtle: #EAF3FF;
+  --arctic-blue-glow: rgba(0, 113, 227, 0.18);
+
+  /* White-primary neutrals */
+  --bg-primary: #F0F4F8;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F7FAFC;
+  --bg-sidebar: rgba(255, 255, 255, 0.82);
+  --bg-hover: rgba(0, 113, 227, 0.05);
+  --bg-active: rgba(0, 113, 227, 0.10);
+
+  /* Card surfaces */
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FBFF;
+  --bg-glass: rgba(255, 255, 255, 0.75);
+
+  /* Text */
+  --text-primary: #0F172A;
+  --text-secondary: #374151;
+  --text-tertiary: #6B7280;
+  --text-quaternary: #9CA3AF;
+  --text-on-blue: #FFFFFF;
+
+  /* Borders */
+  --border-primary: rgba(0, 0, 0, 0.10);
+  --border-secondary: rgba(0, 0, 0, 0.07);
+  --border-focus: var(--arctic-blue);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.06);
+  --shadow-blue: 0 4px 20px rgba(0, 113, 227, 0.30);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
+
+  /* Radii — generous */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --modern-panel-inset: 10px;
+  --modern-panel-radius: 20px;
+
+  /* Status */
+  --status-success: #22C55E;
+  --status-warning: #F59E0B;
+  --status-error: #EF4444;
+}
+
+/* ── Background ── */
+:root[data-theme='modern'] body {
+  background: #E8EEF5;
+  color: #0F172A;
+}
+
+:root[data-theme='modern'] .app {
+  background: transparent;
+}
+
+/* ── Right Panel — floating card, scrollable ── */
+:root[data-theme='modern'] .right-panel {
+  margin: var(--modern-panel-inset);
+  margin-left: 0;
+  height: calc(100% - var(--modern-panel-inset) * 2);
+  border-radius: var(--modern-panel-radius);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
+  overflow-y: auto;        /* ← 修复：可滚动 */
+  overflow-x: hidden;
+  flex-shrink: 0;
+  transition: box-shadow var(--transition-normal);
+}
+
+:root[data-theme='modern'] .right-panel:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Right Panel sections ── */
+:root[data-theme='modern'] .rp-section {
+  margin: 8px 10px;
+  border-radius: var(--radius-md);
+  background: #F7FAFC;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: none;
+  overflow: hidden;
+  transition: background var(--transition-fast);
+}
+
+:root[data-theme='modern'] .rp-section:last-child {
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
+:root[data-theme='modern'] .rp-section:hover {
+  background: #F0F6FF;
+}
+
+:root[data-theme='modern'] .rp-artifact-item {
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+:root[data-theme='modern'] .rp-artifact-item:hover {
+  transform: translateX(2px);
+}
+
+:root[data-theme='modern'] .rp-todo-item {
+  transition: opacity var(--transition-fast);
+}
+
+/* ── TitleBar ── */
+:root[data-theme='modern'] .titlebar {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+/* ── Sidebar ── */
+:root[data-theme='modern'] .sidebar {
+  background: var(--bg-sidebar);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-right: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+/* ── Chat area ── */
+:root[data-theme='modern'] .chat-panel {
+  background: transparent;
+}
+
+/* ── Chat Input — white card ── */
+:root[data-theme='modern'] .chat-input-container {
+  background: var(--bg-card);
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+:root[data-theme='modern'] .chat-input-container:focus-within {
+  border-color: rgba(0, 113, 227, 0.35);
+  box-shadow: var(--shadow-md), 0 0 0 4px rgba(0, 113, 227, 0.08);
+}
+
+:root[data-theme='modern'] .chat-input {
+  background: transparent;
+}
+
+/* ── Tool Call Cards — white + blue accent ── */
+:root[data-theme='modern'] .chat-tool-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+:root[data-theme='modern'] .chat-tool-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+:root[data-theme='modern'] .chat-tool-card.status-error {
+  background: #FFF5F5;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+:root[data-theme='modern'] .chat-tool-header {
+  background: transparent;
+}
+
+:root[data-theme='modern'] .chat-tool-header:hover {
+  background: rgba(0, 113, 227, 0.03);
+}
+
+:root[data-theme='modern'] .chat-tool-body {
+  background: #F8FAFF;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+:root[data-theme='modern'] .chat-tool-pre {
+  background: #F1F5F9;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-sm);
+}
+
+:root[data-theme='modern'] .chat-tool-stats {
+  background: rgba(0, 113, 227, 0.07);
+  color: var(--arctic-blue);
+}
+
+:root[data-theme='modern'] .chat-tool-status-dot.status-running {
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.20);
+  animation: modernPulse 1.4s ease-in-out infinite;
+}
+
+/* ── Message bubble — white card ── */
+:root[data-theme='modern'] .chat-message-bubble {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 113, 227, 0.12);
+  box-shadow: var(--shadow-sm);
+  border-radius: 20px;
+  color: var(--text-primary);
+}
+
+:root[data-theme='modern'] .chat-message-model-tag {
+  background: var(--arctic-blue-subtle);
+  color: var(--arctic-blue);
+  border-radius: var(--radius-full);
+}
+
+/* ── Thinking block ── */
+:root[data-theme='modern'] .chat-thinking-block {
+  background: #F8FAFF;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius-md);
+}
+
+/* ── TitleBar model selector ── */
+:root[data-theme='modern'] .titlebar-model-selector .titlebar-model-btn {
+  background: var(--bg-card);
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+:root[data-theme='modern'] .titlebar-model-selector .titlebar-model-btn:hover,
+:root[data-theme='modern'] .titlebar-model-selector .titlebar-model-btn.active {
+  border-color: rgba(0, 113, 227, 0.3);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(0, 113, 227, 0.08);
+  background: #F0F6FF;
+}
+
+/* ── Attach / tools dropdown ── */
+:root[data-theme='modern'] .attach-dropdown {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ── Send button ── */
+:root[data-theme='modern'] .chat-send-btn.active {
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-blue);
+  transition: all var(--transition-normal);
+}
+
+:root[data-theme='modern'] .chat-send-btn.active:hover {
+  transform: scale(1.06) translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 113, 227, 0.40);
+}
+
+/* ── Model dropdown ── */
+:root[data-theme='modern'] .model-dropdown {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+:root[data-theme='modern'] .model-dropdown-item:hover {
+  background: var(--bg-hover);
+}
+
+:root[data-theme='modern'] .model-dropdown-item.active {
+  background: var(--arctic-blue-subtle);
+  color: var(--arctic-blue);
+}
+
+:root[data-theme='modern'] .model-reasoning-bar {
+  background: #F7FAFC;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+:root[data-theme='modern'] .model-reasoning-pill.active {
+  background: var(--arctic-blue);
+  border-color: var(--arctic-blue);
+  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.30);
+}
+
+/* ── Modern animations ── */
+@keyframes modernPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.20); }
+  50%       { opacity: 0.7; box-shadow: 0 0 0 6px rgba(0, 113, 227, 0.08); }
+}
+
+@keyframes modernSlideUp {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes modernFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+:root[data-theme='modern'] .model-dropdown,
+:root[data-theme='modern'] .attach-dropdown {
+  animation: modernSlideUp 0.18s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+:root[data-theme='modern'] .chat-tool-card {
+  animation: modernFadeIn 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+:root[data-theme='modern'] .chat-message {
+  animation: modernFadeIn 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+:root[data-theme='modern'] .right-panel {
+  animation: modernSlideUp 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ================================================
+   Modern Dark Theme — Dark Blue/Navy, Mica + Rounded
+   ================================================ */
+
+:root[data-theme='modern-dark'] {
+  /* Brand blue — slightly brighter for dark bg */
+  --arctic-blue: #3B9EFF;
+  --arctic-blue-hover: #5AAFFF;
+  --arctic-blue-light: rgba(59, 158, 255, 0.18);
+  --arctic-blue-subtle: rgba(59, 158, 255, 0.12);
+  --arctic-blue-glow: rgba(59, 158, 255, 0.25);
+
+  /* Dark-primary neutrals — deep navy, not pure black */
+  --bg-primary: #0D1117;
+  --bg-secondary: #161B22;
+  --bg-tertiary: #0D1117;
+  --bg-sidebar: rgba(22, 27, 34, 0.88);
+  --bg-hover: rgba(59, 158, 255, 0.08);
+  --bg-active: rgba(59, 158, 255, 0.14);
+
+  /* Card surfaces — elevated glass */
+  --bg-card: rgba(30, 37, 48, 0.95);
+  --bg-card-hover: rgba(38, 46, 60, 0.98);
+  --bg-glass: rgba(22, 27, 34, 0.75);
+
+  /* Text */
+  --text-primary: #F0F6FC;
+  --text-secondary: #8B949E;
+  --text-tertiary: #6E7681;
+  --text-quaternary: #484F58;
+  --text-on-blue: #FFFFFF;
+
+  /* Borders — glowing edge on dark */
+  --border-primary: rgba(255, 255, 255, 0.08);
+  --border-secondary: rgba(255, 255, 255, 0.05);
+  --border-focus: var(--arctic-blue);
+
+  /* Shadows — deeper, cooler */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.30), 0 1px 2px rgba(0, 0, 0, 0.20);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.40), 0 1px 4px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.50), 0 2px 8px rgba(0, 0, 0, 0.30);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.60), 0 6px 16px rgba(0, 0, 0, 0.35);
+  --shadow-blue: 0 4px 20px rgba(59, 158, 255, 0.35);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.40), 0 1px 3px rgba(0, 0, 0, 0.25);
+
+  /* Radii — same generous values as light modern */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --modern-panel-inset: 10px;
+  --modern-panel-radius: 20px;
+
+  /* Status */
+  --status-success: #3FB950;
+  --status-warning: #D29922;
+  --status-error: #F85149;
+}
+
+/* ── Background ── */
+:root[data-theme='modern-dark'] body {
+  background: #080C12;
+}
+
+:root[data-theme='modern-dark'] .app {
+  background: transparent;
+}
+
+/* ── Right Panel ── */
+:root[data-theme='modern-dark'] .right-panel {
+  margin: var(--modern-panel-inset);
+  margin-left: 0;
+  height: calc(100% - var(--modern-panel-inset) * 2);
+  border-radius: var(--modern-panel-radius);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  transition: box-shadow var(--transition-normal);
+  animation: modernSlideUp 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+:root[data-theme='modern-dark'] .right-panel:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Right Panel sections ── */
+:root[data-theme='modern-dark'] .rp-section {
+  margin: 8px 10px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: none;
+  overflow: hidden;
+  transition: background var(--transition-fast);
+}
+
+:root[data-theme='modern-dark'] .rp-section:last-child {
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
+:root[data-theme='modern-dark'] .rp-section:hover {
+  background: rgba(59, 158, 255, 0.06);
+}
+
+:root[data-theme='modern-dark'] .rp-artifact-item {
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+:root[data-theme='modern-dark'] .rp-artifact-item:hover {
+  transform: translateX(2px);
+}
+
+:root[data-theme='modern-dark'] .rp-todo-item {
+  transition: opacity var(--transition-fast);
+}
+
+/* ── TitleBar ── */
+:root[data-theme='modern-dark'] .titlebar {
+  background: rgba(13, 17, 23, 0.90);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── Sidebar ── */
+:root[data-theme='modern-dark'] .sidebar {
+  background: var(--bg-sidebar);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Chat area ── */
+:root[data-theme='modern-dark'] .chat-panel {
+  background: transparent;
+}
+
+/* ── Chat Input ── */
+:root[data-theme='modern-dark'] .chat-input-container {
+  background: var(--bg-card);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+:root[data-theme='modern-dark'] .chat-input-container:focus-within {
+  border-color: rgba(59, 158, 255, 0.40);
+  box-shadow: var(--shadow-md), 0 0 0 4px rgba(59, 158, 255, 0.10);
+}
+
+:root[data-theme='modern-dark'] .chat-input {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+/* ── Tool Call Cards ── */
+:root[data-theme='modern-dark'] .chat-tool-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  animation: modernFadeIn 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+:root[data-theme='modern-dark'] .chat-tool-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+:root[data-theme='modern-dark'] .chat-tool-card.status-error {
+  background: rgba(248, 81, 73, 0.08);
+  border-color: rgba(248, 81, 73, 0.25);
+}
+
+:root[data-theme='modern-dark'] .chat-tool-header {
+  background: transparent;
+}
+
+:root[data-theme='modern-dark'] .chat-tool-header:hover {
+  background: rgba(59, 158, 255, 0.05);
+}
+
+:root[data-theme='modern-dark'] .chat-tool-body {
+  background: rgba(0, 0, 0, 0.20);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme='modern-dark'] .chat-tool-pre {
+  background: rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+:root[data-theme='modern-dark'] .chat-tool-stats {
+  background: rgba(59, 158, 255, 0.12);
+  color: var(--arctic-blue);
+}
+
+:root[data-theme='modern-dark'] .chat-tool-status-dot.status-running {
+  box-shadow: 0 0 0 3px rgba(59, 158, 255, 0.25);
+  animation: modernDarkPulse 1.4s ease-in-out infinite;
+}
+
+/* ── Message bubble ── */
+:root[data-theme='modern-dark'] .chat-message-bubble {
+  background: var(--bg-card);
+  border: 1px solid rgba(59, 158, 255, 0.15);
+  box-shadow: var(--shadow-sm);
+  border-radius: 20px;
+  color: var(--text-primary);
+  animation: modernFadeIn 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+:root[data-theme='modern-dark'] .chat-message-model-tag {
+  background: var(--arctic-blue-subtle);
+  color: var(--arctic-blue);
+  border-radius: var(--radius-full);
+}
+
+/* ── Thinking block ── */
+:root[data-theme='modern-dark'] .chat-thinking-block {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-md);
+}
+
+/* ── TitleBar model selector ── */
+:root[data-theme='modern-dark'] .titlebar-model-selector .titlebar-model-btn {
+  background: rgba(30, 37, 48, 0.90);
+  border: 1.5px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+:root[data-theme='modern-dark'] .titlebar-model-selector .titlebar-model-btn:hover,
+:root[data-theme='modern-dark'] .titlebar-model-selector .titlebar-model-btn.active {
+  border-color: rgba(59, 158, 255, 0.40);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(59, 158, 255, 0.12);
+  background: rgba(59, 158, 255, 0.10);
+}
+
+/* ── Attach / tools dropdown ── */
+:root[data-theme='modern-dark'] .attach-dropdown {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  animation: modernSlideUp 0.18s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Send button ── */
+:root[data-theme='modern-dark'] .chat-send-btn.active {
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-blue);
+  transition: all var(--transition-normal);
+}
+
+:root[data-theme='modern-dark'] .chat-send-btn.active:hover {
+  transform: scale(1.06) translateY(-1px);
+  box-shadow: 0 6px 24px rgba(59, 158, 255, 0.45);
+}
+
+/* ── Model dropdown ── */
+:root[data-theme='modern-dark'] .model-dropdown {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  animation: modernSlideUp 0.18s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+:root[data-theme='modern-dark'] .model-dropdown-item:hover {
+  background: var(--bg-hover);
+}
+
+:root[data-theme='modern-dark'] .model-dropdown-item.active {
+  background: var(--arctic-blue-subtle);
+  color: var(--arctic-blue);
+}
+
+:root[data-theme='modern-dark'] .model-reasoning-bar {
+  background: rgba(0, 0, 0, 0.20);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme='modern-dark'] .model-reasoning-pill.active {
+  background: var(--arctic-blue);
+  border-color: var(--arctic-blue);
+  box-shadow: 0 2px 10px rgba(59, 158, 255, 0.40);
+}
+
+/* ── modern-dark exclusive animation ── */
+@keyframes modernDarkPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(59, 158, 255, 0.25); }
+  50%       { opacity: 0.6; box-shadow: 0 0 0 7px rgba(59, 158, 255, 0.08); }
+}
+
+/* ── reasoning badge in dark ── */
+:root[data-theme='modern-dark'] .tbm-tier-reasoning {
+  background: rgba(59, 158, 255, 0.16);
+  color: var(--arctic-blue);
+}
+
+:root[data-theme='modern-dark'] .tbm-tier-standard {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-tertiary);
+}
+
+/* ================================================
+   Modern+ Theme — Codex-inspired layout
+   Same arctic-blue palette, restructured spacing
+   ================================================ */
+
+:root[data-theme='modern-plus'] {
+  /* Brand blue — match base modern */
+  --arctic-blue: #0071E3;
+  --arctic-blue-hover: #0068D0;
+  --arctic-blue-light: #E0EDFF;
+  --arctic-blue-subtle: #F0F6FF;
+  --arctic-blue-glow: rgba(0, 113, 227, 0.18);
+
+  /* Codex-like neutral surfaces — slightly cool gray app bg, white panels */
+  --bg-primary: #F4F5F7;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #FAFBFC;
+  --bg-sidebar: #F4F5F7;
+  --bg-hover: rgba(15, 23, 42, 0.04);
+  --bg-active: rgba(15, 23, 42, 0.07);
+
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+
+  /* Text — Codex uses near-black for primary, soft slate for secondary */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #6B7280;
+  --text-quaternary: #9CA3AF;
+  --text-on-blue: #FFFFFF;
+
+  --border-primary: rgba(15, 23, 42, 0.08);
+  --border-secondary: rgba(15, 23, 42, 0.05);
+  --border-focus: var(--arctic-blue);
+
+  /* Soft, low-opacity shadows — Codex stays very flat */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-xl: 0 16px 48px rgba(15, 23, 42, 0.10);
+  --shadow-blue: 0 4px 14px rgba(0, 113, 227, 0.22);
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  --status-success: #16A34A;
+  --status-warning: #D97706;
+  --status-error: #DC2626;
+}
+
+/* ── Body / app shell ── */
+:root[data-theme='modern-plus'] body { background: #F4F5F7; color: #0F172A; }
+:root[data-theme='modern-plus'] .app { background: transparent; }
+
+/* ── TitleBar — fully transparent over the gray app shell so the
+   sidebar reads as one continuous gray column from top to bottom
+   (the divider visually "breaks" at the sidebar edge). The chat card
+   below provides its own top edge instead. ── */
+:root[data-theme='modern-plus'] .titlebar {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+}
+
+/* ── Sidebar — gray, no border, flush against the titlebar ── */
+:root[data-theme='modern-plus'] .sidebar {
+  background: var(--bg-sidebar);
+  border-right: none;
+  backdrop-filter: none;
+}
+:root[data-theme='modern-plus'] .sidebar .sidebar-task-item,
+:root[data-theme='modern-plus'] .sidebar .sidebar-project,
+:root[data-theme='modern-plus'] .sidebar .sidebar-nav-item {
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+:root[data-theme='modern-plus'] .sidebar .sidebar-task-item:hover,
+:root[data-theme='modern-plus'] .sidebar .sidebar-project:hover,
+:root[data-theme='modern-plus'] .sidebar .sidebar-nav-item:hover {
+  background: var(--bg-hover);
+}
+:root[data-theme='modern-plus'] .sidebar .sidebar-task-item.active,
+:root[data-theme='modern-plus'] .sidebar .sidebar-nav-item.active {
+  background: var(--bg-active);
+  color: var(--text-primary);
+}
+
+/* ── Chat panel — white rounded card floating in the gray shell.
+   Inset on top/right/bottom; left edge sits against the sidebar with
+   a small gap so the gray shows through. ── */
+:root[data-theme='modern-plus'] .chat-panel {
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  margin: 8px 8px 8px 8px;
+  border-radius: 14px;
+  border: 1px solid var(--border-primary);
+  overflow: hidden;
+}
+
+:root[data-theme='modern-plus'] .chat-messages {
+  background: transparent;
+}
+
+:root[data-theme='modern-plus'] .chat-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  height: 100%;
+  padding-bottom: 16px;
+}
+
+/* ── Empty state: centered input ──
+   When there are no messages, collapse .chat-messages and center the
+   whole greeting + input + pills group vertically. The flex layout on
+   .chat-panel does the heavy lifting: chat-messages shrinks to its
+   greeting content, chat-input-bar follows directly underneath, and the
+   pair is pushed to the middle by symmetric auto margins. */
+:root[data-theme='modern-plus'] .chat-panel[data-empty='true'] {
+  justify-content: center;
+}
+:root[data-theme='modern-plus'] .chat-panel[data-empty='true'] .chat-messages {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+:root[data-theme='modern-plus'] .chat-panel[data-empty='true'] .chat-empty {
+  height: auto;
+  padding-bottom: 0;
+}
+:root[data-theme='modern-plus'] .chat-panel[data-empty='true'] .chat-input-bar {
+  flex: 0 0 auto;
+}
+
+/* ── Active conversation: hide context pills ── */
+:root[data-theme='modern-plus'] .chat-panel[data-empty='false'] .chat-context-pills {
+  display: none;
+}
+:root[data-theme='modern-plus'] .chat-empty-icon { display: none; }
+:root[data-theme='modern-plus'] .chat-empty-title {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+:root[data-theme='modern-plus'] .chat-empty-subtitle {
+  display: none;
+}
+
+/* ── Input bar — large rounded card, centered when empty ── */
+:root[data-theme='modern-plus'] .chat-input-bar {
+  background: transparent;
+  border-top: none;
+  padding: 0 24px 24px;
+}
+:root[data-theme='modern-plus'] .chat-input-container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 1px solid var(--border-primary);
+  border-radius: 22px;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+  padding: 6px 6px 6px 14px;
+}
+:root[data-theme='modern-plus'] .chat-input-container:focus-within {
+  border-color: rgba(0, 113, 227, 0.3);
+  box-shadow: 0 4px 18px rgba(0, 113, 227, 0.12), 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+:root[data-theme='modern-plus'] .chat-input { background: transparent; }
+:root[data-theme='modern-plus'] .chat-input::placeholder { color: var(--text-tertiary); }
+
+/* ── Send button — small circle ── */
+:root[data-theme='modern-plus'] .chat-send-btn {
+  border-radius: var(--radius-full);
+  width: 32px; height: 32px;
+}
+:root[data-theme='modern-plus'] .chat-send-btn.active {
+  background: var(--arctic-blue);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: none;
+}
+:root[data-theme='modern-plus'] .chat-send-btn.active:hover {
+  background: #0066CC;
+  transform: none;
+}
+
+/* ── Context pills below the input ── */
+:root[data-theme='modern-plus'] .chat-context-pills {
+  display: flex;
+  gap: 8px;
+  max-width: 720px;
+  margin: 8px auto 0;
+  padding: 0 6px;
+  flex-wrap: wrap;
+}
+/* Pill wrapper provides positioning context for the inline dropdown */
+:root[data-theme='modern-plus'] .chat-context-pill-wrap {
+  position: relative;
+}
+:root[data-theme='modern-plus'] .chat-context-pill-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: auto;
+  bottom: auto;
+  min-width: 220px;
+  z-index: 250;
+}
+:root[data-theme='modern-plus'] .chat-context-pill {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+:root[data-theme='modern-plus'] .chat-context-pill:hover:not(.is-static) {
+  background: var(--bg-hover);
+  border-color: var(--border-primary);
+}
+:root[data-theme='modern-plus'] .chat-context-pill.is-static { cursor: default; }
+:root[data-theme='modern-plus'] .chat-context-pill svg {
+  width: 12px; height: 12px;
+  color: var(--text-tertiary);
+}
+:root[data-theme='modern-plus'] .chat-context-pill-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--arctic-blue);
+}
+
+/* ── Hide the old workspace selector inside input (now in pills) ── */
+:root[data-theme='modern-plus'] .chat-input-bottom .workspace-selector-wrap {
+  display: none;
+}
+
+/* ── Tool cards — flat ── */
+:root[data-theme='modern-plus'] .chat-tool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  box-shadow: none;
+}
+:root[data-theme='modern-plus'] .chat-tool-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+:root[data-theme='modern-plus'] .chat-tool-body {
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-secondary);
+}
+:root[data-theme='modern-plus'] .chat-tool-pre {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Message bubble — soft and subtle ── */
+:root[data-theme='modern-plus'] .chat-message-bubble {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  box-shadow: none;
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+}
+:root[data-theme='modern-plus'] .chat-thinking-block {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+}
+
+/* ── Right Panel — floating white card with sectioned headers.
+   Margin matches the chat panel (8px) so both cards visually align. ── */
+:root[data-theme='modern-plus'] .right-panel {
+  margin: 8px 8px 8px 0;
+  height: calc(100% - 16px);
+  border-radius: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  box-shadow: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+:root[data-theme='modern-plus'] .rp-section {
+  border-bottom: 1px solid var(--border-secondary);
+  background: transparent;
+  margin: 0;
+  border-radius: 0;
+  padding: 14px 16px;
+}
+:root[data-theme='modern-plus'] .rp-section:last-child { border-bottom: none; }
+:root[data-theme='modern-plus'] .rp-section:hover { background: transparent; }
+:root[data-theme='modern-plus'] .rp-section-header {
+  margin-bottom: 8px;
+}
+:root[data-theme='modern-plus'] .rp-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-tertiary);
+}
+:root[data-theme='modern-plus'] .rp-empty-text {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+:root[data-theme='modern-plus'] .rp-empty-hint {
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+:root[data-theme='modern-plus'] .rp-empty-icon { display: none; }
+:root[data-theme='modern-plus'] .rp-empty {
+  align-items: flex-start;
+  padding: 0;
+}
+
+/* ── Context bar track — base modern-plus uses --bg-secondary for the
+   track which equals the right-panel card colour (#FFF), so the empty
+   portion of the bar disappeared. Override with the app shell tone so
+   the track is always visible. ── */
+:root[data-theme='modern-plus'] .rp-context-bar {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-secondary);
+}
+
+/* ── TitleBar model selector — Codex-style soft pill ── */
+:root[data-theme='modern-plus'] .titlebar-model-selector .titlebar-model-btn {
+  background: #FFFFFF;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+:root[data-theme='modern-plus'] .titlebar-model-selector .titlebar-model-btn:hover,
+:root[data-theme='modern-plus'] .titlebar-model-selector .titlebar-model-btn.active {
+  border-color: rgba(15, 23, 42, 0.16);
+  background: var(--bg-tertiary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Dropdowns — flat ── */
+:root[data-theme='modern-plus'] .attach-dropdown,
+:root[data-theme='modern-plus'] .model-dropdown,
+:root[data-theme='modern-plus'] .workspace-dropdown {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+:root[data-theme='modern-plus'] .model-dropdown-item:hover { background: var(--bg-hover); }
+:root[data-theme='modern-plus'] .model-dropdown-item.active {
+  background: var(--arctic-blue-subtle);
+  color: var(--arctic-blue);
+}
+
+/* ================================================
+   Modern+ — Motion & Icon refinements
+   ================================================ */
+
+/* ── Keyframes ── */
+@keyframes mpFadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes mpFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes mpPopIn {
+  0%   { opacity: 0; transform: translateY(4px) scale(0.96); }
+  60%  { opacity: 1; transform: translateY(-1px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes mpSlideRight {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes mpShimmer {
+  0%   { background-position: -120% 0; }
+  100% { background-position: 220% 0; }
+}
+@keyframes mpDot {
+  0%, 100% { transform: scale(1);   opacity: 0.55; }
+  50%      { transform: scale(1.4); opacity: 1; }
+}
+@keyframes mpCaret {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes mpRing {
+  0%   { box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.35); }
+  70%  { box-shadow: 0 0 0 10px rgba(0, 113, 227, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 113, 227, 0); }
+}
+@keyframes mpFadeOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(4px) scale(0.97); }
+}
+
+/* ── Generic exit animation: any element tagged is-closing
+   plays mpFadeOut. Components opt-in by keeping the node mounted
+   for ~160ms after their state flips false (see useExitAnimated
+   in ChatPanel.jsx). ── */
+:root[data-theme='modern-plus'] .is-closing {
+  animation: mpFadeOut 0.16s cubic-bezier(0.4, 0, 1, 1) forwards !important;
+  pointer-events: none;
+}
+
+/* ── Entrance animations ── */
+:root[data-theme='modern-plus'] .chat-message {
+  animation: mpFadeUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+:root[data-theme='modern-plus'] .chat-tool-card {
+  animation: mpPopIn 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+:root[data-theme='modern-plus'] .right-panel {
+  animation: mpFadeUp 0.36s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+:root[data-theme='modern-plus'] .rp-section {
+  animation: mpFadeIn 0.4s ease-out both;
+}
+:root[data-theme='modern-plus'] .rp-section:nth-child(2) { animation-delay: 60ms; }
+:root[data-theme='modern-plus'] .rp-section:nth-child(3) { animation-delay: 120ms; }
+:root[data-theme='modern-plus'] .rp-section:nth-child(4) { animation-delay: 180ms; }
+:root[data-theme='modern-plus'] .rp-section:nth-child(5) { animation-delay: 240ms; }
+
+/* Empty-state stagger */
+:root[data-theme='modern-plus'] .chat-empty-title {
+  animation: mpFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+:root[data-theme='modern-plus'] .chat-empty + .chat-input-bar,
+:root[data-theme='modern-plus'] .chat-empty ~ .chat-input-bar {
+  animation: mpFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 80ms both;
+}
+:root[data-theme='modern-plus'] .chat-context-pills .chat-context-pill {
+  animation: mpFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+:root[data-theme='modern-plus'] .chat-context-pills .chat-context-pill:nth-child(1) { animation-delay: 140ms; }
+:root[data-theme='modern-plus'] .chat-context-pills .chat-context-pill:nth-child(2) { animation-delay: 200ms; }
+:root[data-theme='modern-plus'] .chat-context-pills .chat-context-pill:nth-child(3) { animation-delay: 260ms; }
+
+/* ── Sidebar interactions ── */
+:root[data-theme='modern-plus'] .sidebar .sidebar-task-item,
+:root[data-theme='modern-plus'] .sidebar .sidebar-project,
+:root[data-theme='modern-plus'] .sidebar .sidebar-nav-item {
+  transition:
+    background var(--transition-fast),
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    color var(--transition-fast);
+}
+:root[data-theme='modern-plus'] .sidebar .sidebar-task-item:hover,
+:root[data-theme='modern-plus'] .sidebar .sidebar-project:hover,
+:root[data-theme='modern-plus'] .sidebar .sidebar-nav-item:hover {
+  transform: translateX(2px);
+}
+:root[data-theme='modern-plus'] .sidebar .sidebar-task-item:active,
+:root[data-theme='modern-plus'] .sidebar .sidebar-nav-item:active {
+  transform: translateX(2px) scale(0.985);
+}
+
+/* ── Context pill micro-lift ── */
+:root[data-theme='modern-plus'] .chat-context-pill {
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform 160ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 160ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .chat-context-pill:hover:not(.is-static) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+:root[data-theme='modern-plus'] .chat-context-pill:active:not(.is-static) {
+  transform: translateY(0) scale(0.97);
+}
+:root[data-theme='modern-plus'] .chat-context-pill-dot {
+  animation: mpDot 1.8s ease-in-out infinite;
+}
+
+/* ── Send button — ripple on click, ring on focus ── */
+:root[data-theme='modern-plus'] .chat-send-btn {
+  transition:
+    background var(--transition-fast),
+    transform 140ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 160ms ease;
+}
+:root[data-theme='modern-plus'] .chat-send-btn.active:hover {
+  transform: translateY(-1px) scale(1.04);
+  background: #0066CC;
+  box-shadow: 0 4px 14px rgba(0, 102, 204, 0.25);
+}
+:root[data-theme='modern-plus'] .chat-send-btn.active:active {
+  transform: scale(0.94);
+  box-shadow: none;
+}
+:root[data-theme='modern-plus'] .chat-send-btn.active:focus-visible {
+  animation: mpRing 0.7s ease-out;
+}
+:root[data-theme='modern-plus'] .chat-send-btn.is-stop {
+  animation: mpFadeIn 0.18s ease-out;
+  background: #DC2626;
+  color: #FFFFFF;
+}
+:root[data-theme='modern-plus'] .chat-send-btn.is-stop:hover {
+  background: #B91C1C;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+}
+
+/* ── Input focus glow ── */
+:root[data-theme='modern-plus'] .chat-input-container {
+  transition:
+    border-color 220ms ease,
+    box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .chat-input-container:focus-within {
+  transform: translateY(-1px);
+}
+
+/* ── Loading dots — soft heartbeat ── */
+:root[data-theme='modern-plus'] .chat-loading-dots span {
+  animation: mpDot 1.2s ease-in-out infinite;
+  background: var(--text-tertiary);
+}
+:root[data-theme='modern-plus'] .chat-loading-dots span:nth-child(2) { animation-delay: 0.15s; }
+:root[data-theme='modern-plus'] .chat-loading-dots span:nth-child(3) { animation-delay: 0.30s; }
+
+/* ── Streaming caret on the trailing assistant bubble ── */
+:root[data-theme='modern-plus'] .chat-message.assistant.is-streaming .chat-message-bubble::after,
+:root[data-theme='modern-plus'] .chat-message.assistant .chat-message-bubble.is-streaming::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -2px;
+  background: var(--arctic-blue);
+  animation: mpCaret 0.9s steps(1) infinite;
+}
+
+/* ── Thinking shimmer for the streaming-thinking block ── */
+:root[data-theme='modern-plus'] .chat-thinking-block.is-live {
+  background:
+    linear-gradient(90deg,
+      rgba(0, 113, 227, 0.00) 0%,
+      rgba(0, 113, 227, 0.08) 50%,
+      rgba(0, 113, 227, 0.00) 100%),
+    var(--bg-tertiary);
+  background-size: 220% 100%, 100% 100%;
+  animation: mpShimmer 1.8s ease-in-out infinite;
+}
+
+/* ── Tool card hover — gentle lift, animated chevron ── */
+:root[data-theme='modern-plus'] .chat-tool-card {
+  transition:
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease;
+}
+:root[data-theme='modern-plus'] .chat-tool-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+:root[data-theme='modern-plus'] .chat-tool-header svg {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .chat-tool-card.is-open .chat-tool-header > svg:last-child,
+:root[data-theme='modern-plus'] .chat-tool-card.is-expanded .chat-tool-header > svg:last-child {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdowns — pop with overshoot ── */
+:root[data-theme='modern-plus'] .attach-dropdown,
+:root[data-theme='modern-plus'] .model-dropdown,
+:root[data-theme='modern-plus'] .workspace-dropdown {
+  animation: mpPopIn 0.22s cubic-bezier(0.22, 1.4, 0.36, 1) forwards;
+  transform-origin: top left;
+}
+:root[data-theme='modern-plus'] .model-dropdown-item,
+:root[data-theme='modern-plus'] .attach-dropdown-item,
+:root[data-theme='modern-plus'] .workspace-dropdown-item {
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    padding-left 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .model-dropdown-item:hover,
+:root[data-theme='modern-plus'] .attach-dropdown-item:hover,
+:root[data-theme='modern-plus'] .workspace-dropdown-item:hover {
+  padding-left: calc(var(--space-3) + 4px);
+}
+
+/* ── TitleBar model selector — smooth color blend ── */
+:root[data-theme='modern-plus'] .titlebar-model-selector .titlebar-model-btn {
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .titlebar-model-selector .titlebar-model-btn:hover {
+  transform: translateY(-1px);
+}
+:root[data-theme='modern-plus'] .titlebar-model-selector .titlebar-model-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── Action buttons in input row ── */
+:root[data-theme='modern-plus'] .chat-input-action-btn {
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .chat-input-action-btn:hover {
+  transform: translateY(-1px);
+}
+:root[data-theme='modern-plus'] .chat-input-action-btn:active {
+  transform: scale(0.92);
+}
+
+/* ── File-changes / background bars — slide in ── */
+:root[data-theme='modern-plus'] .file-changes-review-bar,
+:root[data-theme='modern-plus'] .background-commands-bar {
+  animation: mpFadeUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ================================================
+   Modern+ — Icon refinements
+   - Crisper 1.6px strokes, rounded joins
+   - Subtle hover transforms on action icons
+   - Status icon pulses
+   ================================================ */
+
+:root[data-theme='modern-plus'] svg {
+  /* Default to crisper rounded strokes everywhere in the theme */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Slim down the default 2px strokes used throughout the icon set */
+:root[data-theme='modern-plus'] .chat-input-action-btn svg,
+:root[data-theme='modern-plus'] .chat-action-btn svg,
+:root[data-theme='modern-plus'] .chat-context-pill svg,
+:root[data-theme='modern-plus'] .sidebar svg,
+:root[data-theme='modern-plus'] .titlebar svg,
+:root[data-theme='modern-plus'] .right-panel svg,
+:root[data-theme='modern-plus'] .attach-dropdown svg,
+:root[data-theme='modern-plus'] .workspace-dropdown svg,
+:root[data-theme='modern-plus'] .model-dropdown svg {
+  stroke-width: 1.6;
+}
+
+/* Tool / message action icons — softer color, lift on hover */
+:root[data-theme='modern-plus'] .chat-action-btn {
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .chat-action-btn:hover {
+  transform: translateY(-1px);
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+:root[data-theme='modern-plus'] .chat-action-btn:active {
+  transform: scale(0.92);
+}
+
+/* Send arrow — gentle nudge */
+:root[data-theme='modern-plus'] .chat-send-btn svg {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .chat-send-btn.active:hover svg {
+  transform: translateY(-1px);
+}
+
+/* Sidebar nav icons — color shift + slight slide on hover */
+:root[data-theme='modern-plus'] .sidebar .sidebar-nav-item svg,
+:root[data-theme='modern-plus'] .sidebar .sidebar-task-item svg {
+  color: var(--text-tertiary);
+  transition:
+    color var(--transition-fast),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .sidebar .sidebar-nav-item:hover svg,
+:root[data-theme='modern-plus'] .sidebar .sidebar-task-item:hover svg {
+  color: var(--arctic-blue);
+}
+:root[data-theme='modern-plus'] .sidebar .sidebar-nav-item.active svg {
+  color: var(--arctic-blue);
+}
+
+/* Right-panel section header icons */
+:root[data-theme='modern-plus'] .rp-section-header svg {
+  color: var(--text-tertiary);
+}
+
+/* Tool status dots — heartbeat for running */
+:root[data-theme='modern-plus'] .chat-tool-status-dot.status-running {
+  background: var(--arctic-blue);
+  animation: mpDot 1.4s ease-in-out infinite, mpRing 1.6s ease-out infinite;
+}
+:root[data-theme='modern-plus'] .chat-tool-status-dot.status-success {
+  background: var(--status-success);
+}
+:root[data-theme='modern-plus'] .chat-tool-status-dot.status-error {
+  background: var(--status-error);
+}
+
+/* Chevron icons inside dropdown triggers — rotate when active */
+:root[data-theme='modern-plus'] .titlebar-model-selector .titlebar-model-btn svg:last-child,
+:root[data-theme='modern-plus'] .workspace-selector-btn svg:last-child,
+:root[data-theme='modern-plus'] .model-selector-btn svg:last-child {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-theme='modern-plus'] .titlebar-model-selector .titlebar-model-btn.active svg:last-child,
+:root[data-theme='modern-plus'] .workspace-selector-btn.active svg:last-child,
+:root[data-theme='modern-plus'] .model-selector-btn.active svg:last-child {
+  transform: rotate(180deg);
+}
+
+/* Reduce motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme='modern-plus'] *,
+  :root[data-theme='modern-plus'] *::before,
+  :root[data-theme='modern-plus'] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ================================================
+   Markdown — Code blocks (header + highlight.js)
+   Used by every <ReactMarkdown> in the app via
+   MARKDOWN_COMPONENTS in src/lib/markdownComponents.jsx
+   ================================================ */
+
+.md-code-block {
+  position: relative;
+  margin: 12px 0;
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.md-code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px 6px 12px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-primary);
+  font-family: var(--font-family);
+}
+
+.md-code-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.md-code-lang-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.5) inset;
+}
+
+.md-code-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.md-code-action {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.md-code-action:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.md-code-action svg {
+  flex-shrink: 0;
+}
+
+.md-code-pre {
+  margin: 0 !important;
+  padding: 12px 14px !important;
+  background: var(--bg-tertiary) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.md-code-pre code {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  display: block;
+  white-space: pre;
+}
+
+/* Inline code (single backticks) — keep distinct from code blocks */
+.md-code-block code,
+.md-code-pre code {
+  border-radius: 0;
+}
+
+/* ── Dark hljs overrides (used by data-theme='dark' & modern-dark) ── */
+:root[data-theme='dark'] .hljs,
+:root[data-theme='modern-dark'] .hljs {
+  color: #C9D1D9;
+  background: transparent;
+}
+:root[data-theme='dark'] .hljs-keyword,
+:root[data-theme='modern-dark'] .hljs-keyword,
+:root[data-theme='dark'] .hljs-selector-tag,
+:root[data-theme='modern-dark'] .hljs-selector-tag,
+:root[data-theme='dark'] .hljs-literal,
+:root[data-theme='modern-dark'] .hljs-literal { color: #FF7B72; }
+:root[data-theme='dark'] .hljs-string,
+:root[data-theme='modern-dark'] .hljs-string,
+:root[data-theme='dark'] .hljs-attr,
+:root[data-theme='modern-dark'] .hljs-attr { color: #A5D6FF; }
+:root[data-theme='dark'] .hljs-number,
+:root[data-theme='modern-dark'] .hljs-number,
+:root[data-theme='dark'] .hljs-built_in,
+:root[data-theme='modern-dark'] .hljs-built_in { color: #79C0FF; }
+:root[data-theme='dark'] .hljs-title,
+:root[data-theme='modern-dark'] .hljs-title,
+:root[data-theme='dark'] .hljs-name,
+:root[data-theme='modern-dark'] .hljs-name { color: #D2A8FF; }
+:root[data-theme='dark'] .hljs-comment,
+:root[data-theme='modern-dark'] .hljs-comment,
+:root[data-theme='dark'] .hljs-quote,
+:root[data-theme='modern-dark'] .hljs-quote { color: #8B949E; font-style: italic; }
+:root[data-theme='dark'] .hljs-variable,
+:root[data-theme='modern-dark'] .hljs-variable,
+:root[data-theme='dark'] .hljs-template-variable,
+:root[data-theme='modern-dark'] .hljs-template-variable { color: #FFA657; }
+
+/* Modern+ refinements: tighter borders + brighter header */
+:root[data-theme='modern-plus'] .md-code-block {
+  border-color: var(--border-primary);
+  border-radius: 12px;
+}
+:root[data-theme='modern-plus'] .md-code-header {
+  background: #FAFBFC;
+  border-bottom: 1px solid var(--border-secondary);
+}
+:root[data-theme='modern-plus'] .md-code-pre {
+  background: #FFFFFF !important;
+}
+
+/* ================================================
+   Reset & Base
+   ================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-quaternary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Selection */
+::selection {
+  background: var(--arctic-blue-light);
+  color: var(--text-primary);
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--arctic-blue);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ================================================
+   Utility Classes
+   ================================================ */
+
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-blue { color: var(--arctic-blue); }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ================================================
+   Animations
+   ================================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes thinking {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s var(--transition-smooth) forwards;
+}
+
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}

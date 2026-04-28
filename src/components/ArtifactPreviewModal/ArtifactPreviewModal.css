@@ -1,0 +1,275 @@
+.artifact-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+    z-index: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 4vw;
+    animation: artifactFadeIn 0.15s ease;
+}
+
+@keyframes artifactFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.artifact-modal {
+    width: 100%;
+    max-width: 1100px;
+    height: 100%;
+    max-height: 90vh;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: artifactPopIn 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes artifactPopIn {
+    from { transform: scale(0.98); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.artifact-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-primary);
+    background: var(--bg-secondary);
+    flex-shrink: 0;
+}
+
+.artifact-title-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex: 1;
+    min-width: 0;
+}
+
+.artifact-title {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artifact-type-badge {
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+}
+
+.artifact-dirty-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--arctic-blue);
+    flex-shrink: 0;
+}
+
+.artifact-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+/* Segmented preview/source toggle */
+.artifact-view-toggle {
+    display: inline-flex;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    padding: 2px;
+    gap: 2px;
+}
+
+.artifact-view-toggle button {
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 4px 12px;
+    border-radius: calc(var(--radius-sm) - 2px);
+    font-size: var(--font-size-xs);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+.artifact-view-toggle button:hover {
+    color: var(--text-primary);
+}
+
+.artifact-view-toggle button.active {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.artifact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 1px solid var(--border-primary);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.artifact-btn:hover:not(:disabled) {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border-color: var(--border-secondary);
+}
+
+.artifact-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.artifact-btn.primary {
+    background: var(--arctic-blue);
+    border-color: var(--arctic-blue);
+    color: var(--text-on-blue);
+}
+
+.artifact-btn.primary:hover:not(:disabled) {
+    background: var(--arctic-blue-hover);
+    color: var(--text-on-blue);
+    border-color: var(--arctic-blue-hover);
+}
+
+.artifact-btn.danger {
+    color: var(--status-error);
+}
+
+.artifact-btn.danger:hover {
+    background: rgba(220, 38, 38, 0.08);
+    border-color: rgba(220, 38, 38, 0.4);
+    color: var(--status-error);
+}
+
+.artifact-btn.danger.armed {
+    background: var(--status-error);
+    color: #fff;
+    border-color: var(--status-error);
+}
+
+.artifact-close-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.artifact-close-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.artifact-body {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+}
+
+/* Markdown preview */
+.artifact-markdown {
+    padding: var(--space-6) var(--space-8);
+    overflow-y: auto;
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: var(--font-size-md);
+}
+
+.artifact-markdown h1,
+.artifact-markdown h2,
+.artifact-markdown h3,
+.artifact-markdown h4 {
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+    font-weight: 600;
+}
+
+.artifact-markdown p { margin-bottom: 0.8em; }
+.artifact-markdown code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: var(--bg-tertiary);
+    font-size: 0.92em;
+    font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace);
+}
+.artifact-markdown pre {
+    background: var(--bg-tertiary);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin-bottom: 1em;
+}
+.artifact-markdown pre code {
+    background: transparent;
+    padding: 0;
+}
+.artifact-markdown ul,
+.artifact-markdown ol {
+    padding-left: 1.5em;
+    margin-bottom: 0.8em;
+}
+.artifact-markdown blockquote {
+    border-left: 3px solid var(--border-secondary);
+    padding-left: var(--space-3);
+    color: var(--text-secondary);
+    margin: 0.8em 0;
+}
+.artifact-markdown table {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+.artifact-markdown th,
+.artifact-markdown td {
+    border: 1px solid var(--border-primary);
+    padding: 6px 10px;
+}
+
+/* HTML sandbox iframe */
+.artifact-html-iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: #fff;
+}
+
+/* Make Monaco fill the remaining body space */
+.artifact-body > section,
+.artifact-body > div {
+    flex: 1;
+    min-height: 0;
+}

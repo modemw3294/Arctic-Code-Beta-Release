@@ -1,0 +1,242 @@
+/* ================================================
+   TitleBar
+   ================================================ */
+
+.titlebar {
+    height: var(--titlebar-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-4);
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-secondary);
+    -webkit-app-region: drag;
+    position: relative;
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+.titlebar-drag-region {
+    width: 70px;
+    height: 100%;
+    -webkit-app-region: drag;
+    flex-shrink: 0;
+}
+
+.titlebar-left,
+.titlebar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    -webkit-app-region: no-drag;
+}
+
+.titlebar-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titlebar-task-title {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-weight: 500;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Title Bar Button */
+.titlebar-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.titlebar-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+/* Mode Switcher */
+.mode-switcher {
+    display: flex;
+    align-items: center;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    padding: 3px;
+    gap: 2px;
+}
+
+.mode-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 6px 14px;
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+}
+
+.mode-btn:hover {
+    color: var(--text-secondary);
+}
+
+.mode-btn.active {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.mode-icon {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.mode-label {
+    line-height: 1;
+}
+
+/* ── TitleBar model selector (Modern theme) ── */
+.titlebar-model-selector {
+    -webkit-app-region: no-drag;
+}
+
+.titlebar-model-dropdown {
+    top: calc(100% + 8px);
+    bottom: auto;
+    left: 0;
+    right: auto;
+    min-width: 300px;
+}
+
+/* ── Pill button ── */
+.titlebar-model-btn {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px 5px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    user-select: none;
+    max-width: 320px;
+}
+
+/* ── Brand / version tokens ── */
+.tbm-brand {
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+    letter-spacing: -0.01em;
+}
+
+.tbm-version {
+    font-weight: 400;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ── Reasoning badge ── */
+.tbm-reasoning-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 500;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.tbm-tier-reasoning {
+    background: rgba(0, 113, 227, 0.10);
+    color: var(--arctic-blue, #0071E3);
+}
+
+.tbm-tier-standard {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-tertiary);
+}
+
+/* ── Chevron ── */
+.tbm-chevron {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-quaternary);
+    margin-left: 1px;
+    transition: transform var(--transition-fast);
+}
+
+.titlebar-model-btn.active .tbm-chevron {
+    transform: rotate(180deg);
+}
+
+/* ── Dropdown rows ── */
+.tbm-dropdown-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.tbm-row-name {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+}
+
+.tbm-row-name .tbm-brand {
+    font-size: var(--font-size-sm);
+    max-width: none;
+}
+
+.tbm-row-name .tbm-version {
+    font-size: var(--font-size-xs);
+}
+
+.tbm-row-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+/* ── Reasoning pill inside dropdown reasoning bar ── */
+.tbm-pill-reasoning.active {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tbm-pill-reasoning svg {
+    flex-shrink: 0;
+}

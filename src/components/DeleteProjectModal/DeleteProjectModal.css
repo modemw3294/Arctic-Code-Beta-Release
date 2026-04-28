@@ -1,0 +1,74 @@
+/* Checkbox row inside the delete-project modal. We reuse the modal
+   chrome from RetractConfirmModal.css; this file only adds the bits
+   that are unique to this modal — primarily the toggleable cascade
+   checkbox row. */
+
+.delete-project-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: var(--bg-elevated, var(--bg-secondary));
+    border: 1px solid var(--border-subtle, var(--border-color));
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+    user-select: none;
+}
+
+.delete-project-option:hover {
+    background: var(--bg-hover);
+}
+
+/* Checked state hijacks the modal's accent (red destructive) so the
+   user can't miss that they've armed the more dangerous option. */
+.delete-project-option.is-checked {
+    background: rgba(229, 72, 77, 0.08);
+    border-color: rgba(229, 72, 77, 0.45);
+}
+
+.delete-project-checkbox {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+    border: 1.5px solid var(--border-strong, var(--text-tertiary));
+    border-radius: 4px;
+    background: var(--bg-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: all var(--transition-fast);
+}
+
+.delete-project-checkbox:hover {
+    border-color: var(--text-primary);
+}
+
+.delete-project-checkbox.is-checked {
+    background: #e5484d;
+    border-color: #e5484d;
+}
+
+.delete-project-option-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.delete-project-option-label {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.delete-project-option-hint {
+    margin-top: 3px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    line-height: 1.45;
+}
