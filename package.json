@@ -66,6 +66,7 @@
     ],
     "mac": {
       "category": "public.app-category.developer-tools",
+      "icon": "build/icon.png",
       "target": [
         {
           "target": "dmg",
@@ -74,18 +75,20 @@
       ]
     },
     "linux": {
+      "icon": "build/icon.png",
       "target": [
         {
           "target": "AppImage",
-          "arch": ["x64"]
+          "arch": ["x64", "arm64"]
         }
       ]
     },
     "win": {
+      "icon": "build/icon.png",
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": ["x64", "arm64"]
         }
       ]
     }

@@ -11,18 +11,9 @@ on:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
-        include:
-          - os: windows-latest
-            platform: win
-            arch: x64
-          - os: macos-latest
-            platform: mac
-            arch: universal
-          - os: ubuntu-latest
-            platform: linux
-            arch: x64
 
     runs-on: ${{ matrix.os }}
 
@@ -58,7 +49,7 @@ jobs:
         if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: Arctic-Code-Windows-x64
+          name: Arctic-Code-Windows
           path: release/*.exe
           retention-days: 30
 
@@ -74,7 +65,7 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: Arctic-Code-Linux-x64
+          name: Arctic-Code-Linux
           path: release/*.AppImage
           retention-days: 30
 
@@ -94,9 +85,74 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
+          name: Arctic Code · Beta 2 · Build 25427.01
+          body: |
+            # Arctic Code · Beta 2 · Build 25427.01
+
+            **Trae Solo 的开源平替 · An open-source alternative to Trae Solo**
+
+            ## 📦 下载 / Downloads
+
+            | 平台 / Platform | 架构 / Arch | 文件 / File |
+            | --- | --- | --- |
+            | 🪟 Windows | x64 | `*-x64-Setup.exe` |
+            | 🪟 Windows | ARM64 | `*-arm64-Setup.exe` |
+            | 🍎 macOS | Apple Silicon (M1/M2/M3) | `*-arm64.dmg` |
+            | 🍎 macOS | Intel | `*.dmg` (no suffix) |
+            | 🐧 Linux | x64 | `*-x86_64.AppImage` |
+            | 🐧 Linux | ARM64 | `*-arm64.AppImage` |
+
+            ---
+
+            ## ⚠️ 重要提示 / Important Notes
+
+            ### 🍎 macOS 用户必读 / macOS Users — Please Read
+
+            由于本应用 **未经 Apple 公证签名**（Beta 阶段不进行付费签名），首次打开时 macOS 可能提示 **"无法打开，因为无法验证开发者"** 或 **"已损坏，无法打开"**。
+
+            **解决方法：**
+
+            1. 打开 **系统设置 → 隐私与安全性**（System Settings → Privacy & Security）
+            2. 滚动到底部，找到提示 *"已阻止使用 Arctic Code，因为来自身份不明的开发者"*
+            3. 点击 **「仍要打开」**（Open Anyway）
+            4. 在弹出的确认窗口再次点击 **「打开」**，输入密码即可
+
+            > Because this build is **not notarized by Apple** (no paid signing during Beta), macOS may show "cannot be opened because the developer cannot be verified" or "is damaged and can't be opened" on first launch.
+            >
+            > **Fix:** Go to **System Settings → Privacy & Security**, scroll down, find the blocked-app notice, and click **"Open Anyway"**.
+
+            如果仍提示已损坏（"is damaged"），可在终端执行：
+            ```bash
+            xattr -cr "/Applications/Arctic Code.app"
+            ```
+
+            ### 🐧 Linux 用户 / Linux Users
+
+            下载 `.AppImage` 后赋予执行权限：
+            ```bash
+            chmod +x Arctic-Code-*.AppImage
+            ./Arctic-Code-*.AppImage
+            ```
+
+            ### 🪟 Windows 用户 / Windows Users
+
+            未签名安装包可能被 SmartScreen 拦截。点击 **"更多信息" → "仍要运行"** 即可继续安装。
+
+            ---
+
+            ## ⚠️ Beta 警告 / Beta Warning
+
+            - 本软件目前处于 **Beta 测试阶段**，**功能极其不完善，Bug 极多**
+            - 项目代码中**包含大量由 AI 生成的代码**
+            - **请勿在生产环境或重要项目中使用**，使用前请备份你的代码与数据
+            - 本项目按 "AS IS"（原样）提供，作者不对任何损失负责
+
+            ---
+
+            许可证 / License: **Apache License 2.0**
           files: |
-            artifacts/Arctic-Code-Windows-x64/*
+            artifacts/Arctic-Code-Windows/*
             artifacts/Arctic-Code-macOS/*
-            artifacts/Arctic-Code-Linux-x64/*
+            artifacts/Arctic-Code-Linux/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
